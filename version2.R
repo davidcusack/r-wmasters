@@ -1,0 +1,3 @@
+byacademy %>%
+    select(Sex) %>%
+    plot()
