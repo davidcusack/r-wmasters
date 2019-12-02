@@ -25,7 +25,7 @@ beltAgeSummary2$Belt=factor(beltAgeSummary2$Belt,levels=c("BLACK","BROWN","PURPL
 ggplot(beltAgeSummary2, aes(x=Age.Category, y=count, fill=Belt)) +
   geom_bar(stat='identity', position = position_dodge(preserve = 'single'))+
   scale_fill_manual(values = c("black", "brown","purple","blue"))
-
+  #theme(axis.text.x = element_text(angle = 45))
 
 #Notes
 #https://www.youtube.com/watch?v=6iE1iQgoi5Q&t=206s
