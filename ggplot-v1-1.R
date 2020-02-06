@@ -9,10 +9,49 @@ install.packages('farver')
 byacademy<-read.csv('byacademy.csv', header = TRUE, sep =',', stringsAsFactors = FALSE)
 winners<-read.csv('wm-winners.csv', header = TRUE, sep =',', stringsAsFactors = FALSE)
 
+mydata <- byacademy
+
+# Remove duplicate rows of the dataframe
+distinct(mydata)
+df2 <- distinct(mydata,Middle...Last.Name, .keep_all= TRUE)
+df %>% distinct(mydata)
+
+df <- mydata
+duplicated(df)
+
+#Breaks down all the athelets by weight.category
+openCategory =byacademy %>%
+  group_by(Weight.Category) %>%
+  summarise(count = n(),na.rm=TRUE)
+
+
+
+
 #Breaks down all the athelets by belt and age group 
 beltAgeSummary =byacademy %>%
   group_by(Belt, Age.Category) %>%
   summarise(count = n(),na.rm=TRUE)
+
+
+
+#Counts all the athelets by male and female without Open Class
+atheletsBySex = beltNoOpenClass %>%
+  group_by(Sex) %>%
+  summarise(count = n(),na.rm=TRUE)
+
+
+
+
+  
+
+#Breaks down all the athelets by male & female without open class
+atheletsBySex = beltNoOpenClass %>%
+  group_by(Sex) %>%
+  summarise(count = n(),na.rm=TRUE)
+  
+
+print(beltNoOpenClass)
+
 
 #Reorders the belt levels but colour hieracrchy 
 beltAgeSummary$Belt=factor(beltAgeSummary$Belt,levels=c("BLACK","BROWN","PURPLE","BLUE"))  
@@ -48,9 +87,9 @@ ggplot(beltAgeSexSummaryFemale, aes(x=Age.Category, y=count, fill=Belt)) +
 
 ggplot(beltAgeSexSummaryFemale, aes(x=Belt, y=count)) +
   geom_line()
-###############
+###############Breakdown by Male Athelets
 
-beltAgeSexSummaryMale =byacademy %>%
+beltAgeSexSummaryMale =beltNoOpenClass %>%
   group_by(Belt, Age.Category, Sex) %>%
   summarise(count = n(),na.rm=TRUE) %>%
   filter(Sex == "Male")
@@ -65,6 +104,24 @@ ggplot(beltAgeSexSummaryMale, aes(x=Age.Category, y=count, fill=Belt)) +
   geom_bar(stat='identity', width = 0.9, position = position_dodge(preserve = 'single'))+
   scale_fill_manual(values = c("#181818", "#643E2C","#7A2871","#064DAB"))+
   geom_text(aes(label=count), position=position_dodge(width=0.9), vjust=-1, size=3)
+
+#Totals by belt
+totalBeltsByAgeMale = beltNoOpenClass %>%
+  group_by(Belt, Sex) %>%
+  summarise(count = n(), na.rm=TRUE) %>%
+  filter(Sex == "Male")
+
+totalBeltsByAgeMale$Belt=factor(totalBeltsByAgeMale$Belt,levels=c("BLACK","BROWN","PURPLE","BLUE"))
+
+ggplot(totalBeltsByAgeMale, aes(x=Belt, y=count, fill=Belt)) +
+  ggtitle("") +
+  xlab("") + ylab("") +
+  geom_bar(stat='identity', width = .8, position = position_dodge(preserve = 'single'))+
+  coord_flip()+
+  scale_fill_manual(values = c("#181818", "#643E2C","#7A2871","#064DAB"))+
+  geom_text(aes(label=count), position = position_dodge(width=0.6), vjust=1, hjust=-0.2, size=3)+
+  theme_bw() + theme(legend.position="none", panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line.x.bottom = element_blank(), axis.ticks = element_blank(), axis.text.x = element_blank())
+
 
 ####### Academies ##############
 topTenAcademys = byacademy %>%
@@ -92,9 +149,11 @@ beltsByDivision =byacademy %>%
 beltsByDivision$Full.Category.Name = paste(beltsByDivision$Age.Category,beltsByDivision$Belt,beltsByDivision$Weight.Category)
 beltsByDivision$newColumn <- NULL 
 beltsByDivision
+
+
  
 
-##### Academies under 10 Atheletes #####
+##### Academies Results by size of academy #####
 
 under10Atheletes = byacademy %>%
   group_by(Academy) %>%
@@ -135,8 +194,28 @@ ggplot(medalsOver75, aes(x= Academy, y=count.y)) +
   ggtitle ("Academies with Over 75 Atheletes & Their Medal Account") +
   xlab("Academys") + ylab("Number of Medals") +
   geom_bar(stat='identity', width = 0.9, position = position_dodge(preserve = 'single'), fill = "#FF6666") +
-  geom_text(aes(label=count.y), position=position_dodge(width=0.9), hjust=-0.5) +
-  coord_flip()
+  geom_line(data = medalsOver75, aes(x=Academy, y=count.x, group=1), color = "blue") +
+  geom_text(aes(label=count.y), position=position_dodge(width=0.9), hjust=-0.5)
+
+ggplot(medalsOver75, aes(x=Academy, y=count.x, group=1)) +
+  geom_bar(stat='identity', width = 0.9, position = position_dodge(preserve = 'single'), fill = "#FF6666") +
+  geom_line()+
+  geom_point() +
+  geom_text(aes(label=count.y), position=position_dodge(width=0.9), vjust=-1) +
+  theme(axis.text.x=element_text(angle=90,hjust=1))
+ 
+p = ggplot() + 
+  geom_line(data = medalsOver75, aes(x=Academy, y=count.y, group=1), color = "blue") +
+  geom_line(data = medalsOver75, aes(x=Academy, y=count.x, group=1), color = "red") +
+  
+  geom_point() +
+  xlab('Academies') +
+  ylab('Count') +
+  theme(axis.text.x=element_text(angle=90,hjust=1))
+
+  print(p)
+
+
 
 
 ###### Common Name #############
