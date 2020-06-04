@@ -5,9 +5,12 @@ require(hrbrthemes)
 require(viridis)
 library(magrittr)
 install.packages('farver')
+require(rtools)
 
 byacademy<-read.csv('byacademy.csv', header = TRUE, sep =',', stringsAsFactors = FALSE)
 winners<-read.csv('wm-winners.csv', header = TRUE, sep =',', stringsAsFactors = FALSE)
+
+byacademy
 
 mydata <- byacademy
 
@@ -27,9 +30,7 @@ openCategory =byacademy %>%
 
 
 
-#Breaks down all the athelets by belt and age group 
-beltAgeSummary =byacademy %>%
-  group_by(Belt, Age.Category) %>%
+#Breakf
   summarise(count = n(),na.rm=TRUE)
 
 
@@ -78,8 +79,8 @@ beltAgeSexSummaryFemale$Belt=factor(beltAgeSexSummaryFemale$Belt,levels=c("BLACK
 
 #Plots the data
 ggplot(beltAgeSexSummaryFemale, aes(x=Age.Category, y=count, fill=Belt)) +
-  ggtitle("Number of Female Athlelets by Age Group & Belt") +
-  xlab("Age Categories by Belt Rank") + ylab("Number of Atheletes") +
+  ggtitle("Number of Female Athlelets by Age Group Sorted by Belt Rank") +
+  xlab("Age Categories Sorted by Belt Rank") + ylab("Number of Atheletes") +
   geom_bar(stat='identity', width = 0.9, position = position_dodge(preserve = 'single'))+
   scale_fill_manual(values = c("#181818", "#643E2C","#7A2871","#064DAB")) +
   geom_text(aes(label=count), position=position_dodge(width=0.9), vjust=-1, size=3)
@@ -99,8 +100,8 @@ beltAgeSexSummaryMale$Belt=factor(beltAgeSexSummaryMale$Belt,levels=c("BLACK","B
 
 #Plots the data
 ggplot(beltAgeSexSummaryMale, aes(x=Age.Category, y=count, fill=Belt)) +
-  ggtitle("Number of Male Athlelets by Age Group & Belt") +
-  xlab("Age Categories by Belt Rank") + ylab("Number of Atheletes") +
+  ggtitle("Number of Male Athlelets Registered Ordered by Age & Belt Rank") +
+  xlab("Age Categories Grouped by Belt Rank") + ylab("Number of Atheletes") +
   geom_bar(stat='identity', width = 0.9, position = position_dodge(preserve = 'single'))+
   scale_fill_manual(values = c("#181818", "#643E2C","#7A2871","#064DAB"))+
   geom_text(aes(label=count), position=position_dodge(width=0.9), vjust=-1, size=3)
@@ -123,19 +124,12 @@ ggplot(totalBeltsByAgeMale, aes(x=Belt, y=count, fill=Belt)) +
   theme_bw() + theme(legend.position="none", panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line.x.bottom = element_blank(), axis.ticks = element_blank(), axis.text.x = element_blank())
 
 
-####### Academies ##############
-topTenAcademys = byacademy %>%
-  group_by(Academy) %>%
-  summarise(count = n(),na.rm=TRUE) %>%
-  arrange(desc(count)) %>%
-  top_n(10, count)
-  
-ggplot(topTenAcademys, aes(x= reorder(Academy, -count), y=count)) +
-  ggtitle ("Top Ten Academys by Number of Students") +
-  xlab("Academys") + ylab("Number of Atheletes") +
-  geom_bar(stat='identity', width = 0.9, position = position_dodge(preserve = 'single'), fill = "#FF6666") +
-  geom_text(aes(label=count), position=position_dodge(width=0.9), hjust=-0.5) +
-  coord_flip()
+
+
+
+
+
+
 
 ###### Scatter plot #####
 
@@ -219,12 +213,21 @@ p = ggplot() +
 
 
 ###### Common Name #############
+#maleFirstName = byacademy %>%
+ # group_by(First.Name, Sex) %>%
+  #axis.text.x.top = 10 %>%
+  #filter(Sex == "Male") %>%
+  #summarise(count = n(), na.rm=TRUE) %>%
+  #arrange(desc(count))
+  
 maleFirstName = byacademy %>%
-  group_by(First.Name, Sex) %>%
-  axis.text.x.top = 10 %>%
-  filter(Sex == "Male") %>%
-  summarise(count = n(), na.rm=TRUE) %>%
-  arrange(desc(count)) %>%
+    group_by(First.Name, Sex) %>%
+    filter(Sex == "Male")%>%
+    summarise(count = n(), na.rm=TRUE) %>%
+    arrange(desc(count))
+  
+    
+print (maleFirstName)
   
 commonMaleName <- maleFirstName[1,3]
 print(commonMaleName)
@@ -240,3 +243,21 @@ print(totalMales/commonMaleName)
 maleNamePrevelance <- (commonMaleName + totalMales$count)
 print(maleNamePrevelance)
 
+
+###### COMPLETED PLOTS #####################
+
+####### Top Academies ############## 
+topThirteenAcademys = byacademy %>%
+  group_by(Academy) %>%
+  summarise(count = n(),na.rm=TRUE) %>%
+  arrange(desc(count)) %>%
+  
+  top_n(13, count)
+
+ggplot(topThirteenAcademys, aes(x= reorder(Academy, count), y=count)) +
+  ggtitle ("Thirteen Largest Academys by Number of Competitors") +
+  xlab("Academys") + ylab("Number of Atheletes") +
+  geom_bar(stat='identity', width = 0.9, position = position_dodge(preserve = 'single'), fill = "#003366") +
+  geom_text(aes(label=count), position=position_dodge(width=0.9), hjust=-0.5) +
+  coord_flip(ylim = c(0,305))+
+  theme_bw()
