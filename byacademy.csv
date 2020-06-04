@@ -121,7 +121,7 @@ ALLIANCE,BLUE,Master 4,Male,Medium-Heavy,Jason,L Tounsley
 ALLIANCE,BLUE,Master 4,Male,Medium-Heavy,Jacob,William Fox
 ALLIANCE,BLUE,Master 4,Female,Light-Feather,Andreia,Tiheme Ikehara
 ALLIANCE,BLUE,Master 4,Female,Feather,Galina,Buckhout
-ALLIANCE,BLUE,Master 4,Female,Open Class Class,Galina,Buckhout
+ALLIANCE,BLUE,Master 4,Female,Open Class,Galina,Buckhout
 ALLIANCE,BLUE,Master 4,Female,Light,Jacqueline,Shannon Heron
 ALLIANCE,BLUE,Master 4,Female,Light,Tamara,Jean Iglesias
 ALLIANCE,BLUE,Master 5,Male,Light-Feather,Jon,S. Kim
@@ -131,9 +131,9 @@ ALLIANCE,BLUE,Master 5,Male,Heavy,David,Albert G Langfield
 ALLIANCE,BLUE,Master 5,Male,Ultra-Heavy,Christopher,Karris
 ALLIANCE,BLUE,Master 6,Male,Medium-Heavy,Gregory,Joseph Cuomo
 ALLIANCE,BLUE,Master 6,Male,Heavy,Tom,David Eilers Jr
-ALLIANCE,BLUE,Master 6,Male,Open Class Class,Tom,David Eilers Jr
+ALLIANCE,BLUE,Master 6,Male,Open Class,Tom,David Eilers Jr
 ALLIANCE,BLUE,Master 7,Male,Middle,Gary,Tucker Foster
-ALLIANCE,BLUE,Master 7,Male,Open Class Class,Gary,Tucker Foster
+ALLIANCE,BLUE,Master 7,Male,Open Class,Gary,Tucker Foster
 ALLIANCE,PURPLE,Master 1,Male,Rooster,Enrique,Ernesto Olivares
 ALLIANCE,PURPLE,Master 1,Male,Light-Feather,John,Quoc Tran
 ALLIANCE,PURPLE,Master 1,Male,Feather,Raphael,Vieira Ultra Carneiro
@@ -154,9 +154,9 @@ ALLIANCE,PURPLE,Master 1,Female,Feather,Shantel,Ilima Uhiwalani Hose-Fernandes
 ALLIANCE,PURPLE,Master 1,Female,Light,Abigail,Guadalupe Avila
 ALLIANCE,PURPLE,Master 1,Female,Middle,Mei,Linn Park
 ALLIANCE,PURPLE,Master 1,Female,Middle,Molly,Bowser
-ALLIANCE,PURPLE,Master 1,Female,Open Class Class,Molly,Bowser
+ALLIANCE,PURPLE,Master 1,Female,Open Class,Molly,Bowser
 ALLIANCE,PURPLE,Master 1,Female,Medium-Heavy,Danielle,Christine Baron
-ALLIANCE,PURPLE,Master 1,Female,Open Class Class,Danielle,Christine Baron
+ALLIANCE,PURPLE,Master 1,Female,Open Class,Danielle,Christine Baron
 ALLIANCE,PURPLE,Master 1,Female,Super-Heavy,Shayne,Dickson
 ALLIANCE,PURPLE,Master 2,Male,Light-Feather,Thanh-Lam,Ngo
 ALLIANCE,PURPLE,Master 2,Male,Feather,Christopher,Michael Hinano Pascua
@@ -174,15 +174,15 @@ ALLIANCE,PURPLE,Master 2,Male,Ultra-Heavy,Robert,Benjamin Young
 ALLIANCE,PURPLE,Master 2,Male,Ultra-Heavy,Kevin,Lawrence Johnson Jr.
 ALLIANCE,PURPLE,Master 2,Female,Feather,Angela,L. Bartlett-Kolewe
 ALLIANCE,PURPLE,Master 2,Female,Medium-Heavy,Christine,Royal Fader
-ALLIANCE,PURPLE,Master 2,Female,Open Class Class,Christine,Royal Fader
+ALLIANCE,PURPLE,Master 2,Female,Open Class,Christine,Royal Fader
 ALLIANCE,PURPLE,Master 2,Female,Medium-Heavy,Michella,Royal Almeida
-ALLIANCE,PURPLE,Master 2,Female,Open Class Class,Michella,M Almeida
+ALLIANCE,PURPLE,Master 2,Female,Open Class,Michella,M Almeida
 ALLIANCE,PURPLE,Master 2,Female,Heavy,Evelyn,Tadlock
-ALLIANCE,PURPLE,Master 2,Female,Open Class Class,Evelyn,Tadlock
+ALLIANCE,PURPLE,Master 2,Female,Open Class,Evelyn,Tadlock
 ALLIANCE,PURPLE,Master 3,Male,Light-Feather,Leslie,Kealoha New Sr.
 ALLIANCE,PURPLE,Master 3,Male,Light,Christopher,David Cardillo
 ALLIANCE,PURPLE,Master 3,Male,Middle,Ferhayn,L Kofi Gambrah
-ALLIANCE,PURPLE,Master 3,Male,Open Class Class,Ferhayn,L Kofi Gambrah
+ALLIANCE,PURPLE,Master 3,Male,Open Class,Ferhayn,L Kofi Gambrah
 ALLIANCE,PURPLE,Master 3,Male,Super-Heavy,Samual,N Laci
 ALLIANCE,PURPLE,Master 3,Female,Rooster,Jade,Frances Tomelden
 ALLIANCE,PURPLE,Master 3,Female,Feather,Minah,Suh Turner
@@ -196,9 +196,9 @@ ALLIANCE,PURPLE,Master 5,Male,Light-Feather,Carlos,Quitugua
 ALLIANCE,PURPLE,Master 5,Male,Feather,Sean,Kaneshiro
 ALLIANCE,PURPLE,Master 5,Male,Super-Heavy,Yeongho,Kim
 ALLIANCE,PURPLE,Master 7,Male,Medium-Heavy,Ricardo,Ferreira Ayres
-ALLIANCE,PURPLE,Master 7,Male,Open Class Class,Ricardo,Ferreira Ayres
+ALLIANCE,PURPLE,Master 7,Male,Open Class,Ricardo,Ferreira Ayres
 ALLIANCE,PURPLE,Master 7,Male,Medium-Heavy,Michael,George Andrews
-ALLIANCE,PURPLE,Master 7,Male,Open Class Class,Michael,George Andrews
+ALLIANCE,PURPLE,Master 7,Male,Open Class,Michael,George Andrews
 ALLIANCE,BROWN,Master 1,Male,Light-Feather,Anthony,Frank
 ALLIANCE,BROWN,Master 1,Male,Feather,Jason,Paul Jurao
 ALLIANCE,BROWN,Master 1,Male,Feather,Jon,Andrew Delos Reyes
@@ -230,7 +230,7 @@ ALLIANCE,BROWN,Master 2,Female,Feather,Charlene,Marie Barretto
 ALLIANCE,BROWN,Master 3,Male,Feather,Roy,R Duquette
 ALLIANCE,BROWN,Master 3,Male,Light,Noel,C. Guerrero
 ALLIANCE,BROWN,Master 3,Male,Middle,Aleksandr,Donald Jones
-ALLIANCE,BROWN,Master 3,Male,Open Class Class,Aleksandr,Donald Jones
+ALLIANCE,BROWN,Master 3,Male,Open Class,Aleksandr,Donald Jones
 ALLIANCE,BROWN,Master 3,Male,Middle,Jason,R. Friesen
 ALLIANCE,BROWN,Master 3,Male,Heavy,Christopher,M Oquendo
 ALLIANCE,BROWN,Master 3,Male,Super-Heavy,Charles,L. Waddell
@@ -241,12 +241,12 @@ ALLIANCE,BROWN,Master 4,Male,Heavy,F?bio,Herrmann Coelho de Souza
 ALLIANCE,BROWN,Master 4,Male,Heavy,John,Cass Kowaleski
 ALLIANCE,BROWN,Master 4,Male,Super-Heavy,Lloyd,Gerald Handy
 ALLIANCE,BROWN,Master 4,Female,Middle,Amy,Konopka
-ALLIANCE,BROWN,Master 4,Female,Open Class Class,Amy,Konopka
+ALLIANCE,BROWN,Master 4,Female,Open Class,Amy,Konopka
 ALLIANCE,BROWN,Master 5,Male,Medium-Heavy,Marc,S Dickie
 ALLIANCE,BROWN,Master 6,Male,Feather,Jeffrey,S. Humphrey
 ALLIANCE,BROWN,Master 6,Male,Middle,Andre,Luiz Schiliro
 ALLIANCE,BROWN,Master 6,Female,Light,Cynthia,A. Fink
-ALLIANCE,BROWN,Master 6,Female,Open Class Class,Cynthia,A. Fink
+ALLIANCE,BROWN,Master 6,Female,Open Class,Cynthia,A. Fink
 ALLIANCE,BLACK,Master 1,Male,Light-Feather,Gabriel,Afonso dos Santos Moraes
 ALLIANCE,BLACK,Master 1,Male,Light-Feather,Antonio,Jose Casarez
 ALLIANCE,BLACK,Master 1,Male,Feather,Francielio,Fernandes da Costa
@@ -282,7 +282,7 @@ ALLIANCE,BLACK,Master 3,Male,Medium-Heavy,Kristoffer,Erik Nielsen
 ALLIANCE,BLACK,Master 3,Male,Heavy,Robert,J. Henricksen
 ALLIANCE,BLACK,Master 3,Male,Super-Heavy,Luis,Rubalcava
 ALLIANCE,BLACK,Master 3,Female,Middle,Gabriela,Dolores Muller
-ALLIANCE,BLACK,Master 3,Female,Open Class Class,Gabriela,Dolores Muller
+ALLIANCE,BLACK,Master 3,Female,Open Class,Gabriela,Dolores Muller
 ALLIANCE,BLACK,Master 4,Male,Light,Raimundo,Ces?rio de Almeida
 ALLIANCE,BLACK,Master 4,Male,Light,Neale,Ehren Hoerle
 ALLIANCE,BLACK,Master 4,Male,Middle,Alexandre,L. Martins Meadows
